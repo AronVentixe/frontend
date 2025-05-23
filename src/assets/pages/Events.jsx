@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import EventCard from '../components/EventCard'
 import PageHeading from '../components/PageHeading';
+import SidePanel from '../components/SidePanel';
+import Footer from '../components/Footer';
 
 const Events = () => {
   console.log("Events component rendered");
@@ -23,16 +25,25 @@ const Events = () => {
   }, [])
 
   return (
-    <div className='page-wrapper'>
-      <PageHeading>Events</PageHeading>
-      <div className='event-wrapper'>
-        {
-        events.map(event => (
-          <EventCard key={event.id} event={event} />
-        ))
-      }
-      </div> 
+    <div className='layout'>
+
+        <SidePanel></SidePanel>
+
+        <div className='content'>
+          <PageHeading>Events</PageHeading>
+          <div className='event-wrapper'>
+              {
+              events.map(event => (
+                <EventCard key={event.id} event={event} />
+              ))
+            }
+          </div> 
+
+          <Footer></Footer>
+        </div> 
+         
     </div>
+    
   )
 }
 
