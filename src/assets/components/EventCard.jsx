@@ -12,7 +12,9 @@ const EventCard = ({ event }) => {
         <img className='map-pin-icon' src="/images/eventcard/map-pin.svg" alt="" />
         <p className="eventcard-location">Rocky Ridge Exhibition Hall, Denver, CO</p>
       </div>
-      <span className="price">$40</span>
+      <div className='eventcard-bottom'>
+      <span className="eventcard-price">$40</span>
+      </div>
     </div>
 
 
