@@ -1,7 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const EventCard = ({ event }) => {
-  return <div className='eventcard'>
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/event/${event.id}`);
+  };
+
+  return <div className='eventcard' onClick={handleClick}>
     
     <div className="eventcard-image"></div>
 

@@ -16,6 +16,7 @@ html, body {
   padding: .7rem;
   border-radius: 16px;
   height: 20.5rem;
+  cursor: pointer;
 }
 
 .eventcard-image {
