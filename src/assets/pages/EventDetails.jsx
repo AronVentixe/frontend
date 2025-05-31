@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import SidePanel from '../components/SidePanel';
 import Footer from '../components/Footer';
 import PageHeading from '../components/PageHeading';
+import SeatPlan from '../components/SeatPlan';
+import TermsAndConditions from '../components/TermsAndConditions';
+import Packages from '../components/Packages';
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -23,22 +26,26 @@ const EventDetails = () => {
 
         <SidePanel></SidePanel>
 
-        <div className='content'>
-            <PageHeading>Event Details</PageHeading>
-            <div className='event-wrapper event-wrapper-details'> 
+        <PageHeading>Event Details</PageHeading>
+
+        <div className='content eventdetails-layout'>
+          
+          <SeatPlan></SeatPlan>
+
+          <div className='event-wrapper event-details'> 
               <div className="eventcard-image"></div>
 
-              <div className="eventcard-info">
-                <h3 className="eventcard-title">{event.name}</h3>
-                <div className='eventcard-horizontal-flex'>
-                  <img className='calender-icon' src="/images/eventcarddetails/calendar-dot.svg" alt="" />
-                  <p className="eventcard-date">June 5, 2029 — 3:00 PM</p>
-                </div>
-                <div className='eventcard-horizontal-flex'>
-                  <img className='map-pin-icon' src="/images/eventcard/map-pin.svg" alt="" />
-                  <p className="eventcard-location">Rocky Ridge Exhibition Hall, Denver, CO</p>
-                </div>
-                <div className='eventcard-bottom'>
+            <div className="eventcard-info">
+              <h3 className="eventcard-title">{event.name}</h3>
+              <div className='eventcard-horizontal-flex'>
+                <img className='calender-icon' src="/images/eventcarddetails/calendar-dot.svg" alt="" />
+                <p className="eventcard-date">June 5, 2029 — 3:00 PM</p>
+              </div>
+              <div className='eventcard-horizontal-flex'>
+                <img className='map-pin-icon' src="/images/eventcard/map-pin.svg" alt="" />
+                <p className="eventcard-location">Rocky Ridge Exhibition Hall, Denver, CO</p>
+              </div>
+              <div className='eventcard-bottom'>
                 <span className="eventcard-price">$40</span>
               </div>
 
@@ -48,9 +55,12 @@ const EventDetails = () => {
             </div>
 
           </div>
+          <Packages></Packages>
+          <TermsAndConditions></TermsAndConditions>
 
-          <Footer></Footer>
         </div> 
+
+        <Footer></Footer>
          
     </div>
   );

@@ -29,8 +29,8 @@ const Events = () => {
 
         <SidePanel></SidePanel>
 
+        <PageHeading>Events</PageHeading>
         <div className='content'>
-          <PageHeading>Events</PageHeading>
           <div className='event-wrapper'>
               {
               events.map(event => (
@@ -39,8 +39,8 @@ const Events = () => {
             }
           </div> 
 
-          <Footer></Footer>
         </div> 
+        <Footer></Footer>
          
     </div>
     

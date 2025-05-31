@@ -10,6 +10,13 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
+.card {
+  background-color: 	rgb(255, 255, 255);
+  border: 1px dashed red;
+  padding: .7rem;
+  border-radius: 16px;
+}
+
 .eventcard {
   background-color: 	rgb(255, 255, 255);
   width: 17rem;
@@ -82,7 +89,7 @@ html, body {
   border-radius: 16px;
   padding: 1rem;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
 }
@@ -98,7 +105,7 @@ html, body {
   grid-template-rows: auto 1fr;
   grid-template-areas: "sidepanel pageheading" "sidepanel maincontent" "sidepanel footer";
   padding: .5rem;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidepanel {
@@ -171,6 +178,155 @@ html, body {
   gap: 1rem;
 }
 
+/* Event Details Page */
+
+.content.eventdetails-layout {
+  display: grid;
+  grid-template-areas: "event-details seatplan" "terms seatplan" "terms packages";
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.event-wrapper.event-details {
+  grid-area: event-details;
+}
+
+.seatplan-layout {
+  display: grid;
+  grid-template-areas: "seatplan-header seatplan-header" "seatplan-top seatplan-top";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.seatplan-body-top {
+  grid-area: seatplan-top;
+  align-items: stretch;
+  align-items: flex-start
+}
+
+.seatplan-header {
+  grid-area: seatplan-header;
+}
+
+.terms-and-conditions {
+  grid-area: terms;
+}
+
+.seat-class {
+  display: flex;
+  gap: .5rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.seat-class-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-pack {
+  gap: .5rem;
+
+  p {
+    font-size: 11.51px;
+    color: #1E1E20;
+  }
+  
+}
+
+.seat-price {
+  color: #C256C7;
+  font-weight: 600;
+  font-size: 10.46px;
+}
+
+.seat-class-bottom {
+  color: #777779;
+  font-size: 10.46px;
+}
+
+.tier-list {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  gap: 1rem;
+  grid-area: tier-list;
+  
+}
+
+.stage-image {
+   width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+
+
+.square {
+  flex-shrink: 0;
+  width: .9rem;
+  height: 1.2rem;
+  border-radius: 2.19px;
+}
+
+      /* square colors */
+      .diamond {
+        background-color: #FCD3FE;
+      }
+
+      .platinum {
+        background-color: #FCE2FE;
+      }
+
+      .gold {
+        background-color: #707DBF;
+      }
+
+      .silver {
+        background-color: #ABB4DD;
+      }
+        
+      .bronze {
+        background-color: #D3DAF9;
+      }
+
+      .general-admission {
+        background-color: #FFEFC3;
+      }
+
+      .backstage-access {
+        background-color: #FFCA39;
+      }
+
+      .vip-lounge {
+        background-color: #F26CF9;
+      }
+
+/* Event Details Page */
+
+/* Helper */
+.display-flex {
+  display: flex;
+}
+
+.display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Helper */
+
 .footer {
   display: flex;
   grid-area: footer;
@@ -178,6 +334,7 @@ html, body {
   height: 5rem;
   border-radius: 16px;
   padding: .7rem;
+  margin-top: 1rem;
   background-color: #f7f7f7;
 
   p {
