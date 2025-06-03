@@ -180,6 +180,10 @@ html, body {
 
 /* Event Details Page */
 
+.eventdetails-page {
+  background-color: #ffffff;
+}
+
 .content.eventdetails-layout {
   display: grid;
   grid-template-areas: "event-details seatplan" "terms seatplan" "terms packages";
@@ -190,11 +194,48 @@ html, body {
   grid-area: event-details;
 }
 
+.event-details {
+
+  .eventcard-image {
+    height: 30rem;
+  }
+
+  .eventcard-title {
+    font-size: 24px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .calender-icon {
+    width: 1rem;
+  }
+
+  .eventcard-date {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .eventcard-location {
+    margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  .eventcard-price {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 11px;
+    color: #37437D;
+  }
+}
+
 .seatplan-layout {
   display: grid;
   grid-template-areas: "seatplan-header seatplan-header" "seatplan-top seatplan-top";
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+  grid-row: span 2;
   gap: 1rem;
 }
 
@@ -308,6 +349,50 @@ html, body {
       .vip-lounge {
         background-color: #F26CF9;
       }
+
+
+.package-card {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 16px;
+
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    color: #636365;
+  }
+
+  .eventcard-price {
+    position: absolute;
+    right: 40px;
+  }
+}
+
+.package-card-info {
+  gap: .2rem;
+
+  img {
+    width: 1rem;
+  }
+}
+
+.package-card-wrapper {
+  gap: 1rem;
+}
+
+.packages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 /* Event Details Page */
 

@@ -22,7 +22,7 @@ const EventDetails = () => {
   if (!event) return <p>Loading...</p>;
 
   return (
-    <div className='layout'>
+    <div className='layout eventdetails-page'>
 
         <SidePanel></SidePanel>
 
