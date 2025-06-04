@@ -6,6 +6,7 @@ import PageHeading from '../components/PageHeading';
 import SeatPlan from '../components/SeatPlan';
 import TermsAndConditions from '../components/TermsAndConditions';
 import Packages from '../components/Packages';
+import Partners from '../components/Partners';
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -57,6 +58,7 @@ const EventDetails = () => {
           </div>
           <Packages></Packages>
           <TermsAndConditions></TermsAndConditions>
+          <Partners></Partners>
 
         </div> 
 
