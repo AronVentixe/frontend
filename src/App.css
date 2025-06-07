@@ -30,6 +30,14 @@ html, body {
   border-radius: 16px;
   width: 100%;
   height: 12rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
 }
 
 .eventcard-date {
@@ -137,6 +145,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: fit-content;
 }
 
 .sign-out-button {
@@ -177,6 +186,50 @@ html, body {
   gap: 1rem;
 }
 
+.sidepanel-button {
+  display: inline-flex;
+  text-decoration: none;
+    transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.3s ease-in-out;
+
+
+  span {
+    color: #37437D;
+  }
+}
+
+.sidepanel-button-content {
+  transition: transform 0.3s ease;
+}
+
+.sidepanel-button:hover .sidepanel-button-content {
+  transform: scale(1.05);
+}
+
+.sidepanel-button.active {
+  position: relative;
+  overflow: visible;
+}
+
+.sidepanel-button.active::before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  right: 125px;
+  width: 6px;
+  background-color: #f26cf9;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.sidepanel-button.active img {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(67%) saturate(682%) hue-rotate(273deg) brightness(180%) contrast(106%);
+}
+
+.sidepanel-button.active span {
+  color: #f26cf9;
+}
+
 /* Event Details Page */
 
 .eventdetails-page {
@@ -209,6 +262,13 @@ html, body {
 
 .eventcard-image.event-details {
   border-radius: 16px 16px 0px 0px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+  }
 }
 
 .event-details {
@@ -221,6 +281,7 @@ html, body {
     font-size: 24px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    color: black;
   }
 
   .calender-icon {
@@ -431,6 +492,42 @@ html, body {
   img {
     width: 9rem;
   }
+}
+
+.book-button {
+  display: flex;
+  background-color: #e353d6;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #1C2346;
+  }
+}
+
+.book-button-text {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.book-button:hover .book-button-text {
+  transform: scale(1.08);
+}
+
+.event-details .eventcard-bottom {
+  justify-content: space-between;
+  padding-top: .5rem;
+
 }
 
 /* Event Details Page */

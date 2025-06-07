@@ -37,7 +37,7 @@ const EventDetails = () => {
           
 
           <div className='event-wrapper event-details'> 
-              <div className="eventcard-image event-details"></div>
+              <div className="eventcard-image event-details"> <img src="/images/eventcard/placeholder-image.jpg" alt="placeholder image" /></div>
 
             <div className="eventcard-info event-details">
               <h3 className="eventcard-title">{event.title}</h3>
@@ -56,7 +56,7 @@ const EventDetails = () => {
                 <p className="eventcard-location">{event.location}</p>
               </div>
               <div className='eventcard-bottom display-flex'>
-                <Link to={`/events/booking/${id}`}>Book Event</Link>
+                <Link className='book-button' to={`/events/booking/${id}`}><span className='book-button-text'>Book Event</span></Link>
                 <span className="eventcard-price">$40</span>
               </div>
 

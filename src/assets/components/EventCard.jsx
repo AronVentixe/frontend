@@ -11,10 +11,16 @@ const EventCard = ({ event }) => {
 
   return <div className='eventcard' onClick={handleClick}>
     
-    <div className="eventcard-image">{event.image}</div>
+    <div className="eventcard-image"><img src="/images/eventcard/placeholder-image.jpg" alt="placeholder image" /></div>
 
     <div className="eventcard-info">
-      <p className="eventcard-date">{event.eventDate}</p>
+      <p className="eventcard-date">{new Date(event.eventDate).toLocaleString('sv-SE', {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                                hour: '2-digit',
+                                                minute: '2-digit'
+                                              })}</p>
       <h3 className="eventcard-title">{event.title}</h3>
       <div className='eventcard-horizontal-flex'>
         <img className='map-pin-icon' src="/images/eventcard/map-pin.svg" alt="" />
