@@ -19,7 +19,7 @@ const EventList = () => {
   }, [])
 
   return (
-    <section id='events'>
+    <section id='events' className='event-list'>
       {
         events.map(event => (<EventCard key={event.id} event={event} />))
       }

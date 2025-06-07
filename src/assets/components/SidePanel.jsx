@@ -31,7 +31,7 @@ const SidePanel = () => {
         </NavLink>
       </div>
 
-      <button className='sign-out-button'> <img className='sign-out-icon' src="/images/sidepanel/sign-out.svg" alt="" />Sign Out</button>
+      {/* <button className='sign-out-button'> <img className='sign-out-icon' src="/images/sidepanel/sign-out.svg" alt="" />Sign Out</button> */}
     </div>
   )
 }

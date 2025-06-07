@@ -18,7 +18,7 @@ html, body {
 
 .eventcard {
   background-color: 	rgb(255, 255, 255);
-  width: 17rem;
+  width: 23rem;
   padding: .7rem;
   border-radius: 16px;
   height: 20.5rem;
@@ -88,6 +88,11 @@ html, body {
 
 }  
 
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .page-heading {
   grid-area: pageheading;
   background-color: #f7f7f7;
@@ -108,7 +113,7 @@ html, body {
 
 .layout {
   display: grid;
-  grid-template-columns: 15rem 1fr;
+  grid-template-columns: 20rem 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "sidepanel pageheading" "sidepanel maincontent" "sidepanel footer";
   padding: .5rem;
@@ -124,7 +129,7 @@ html, body {
   background: #eeefff;
   height: 100%;
   border-radius: 16px;
-  width: 14rem;
+  width: 19rem;
   
   justify-content: space-between;
 }
