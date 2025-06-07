@@ -10,6 +10,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<Events />} />
       <Route path="/events" element={<Events />} />
       <Route path="/event/:id" element={<EventDetails />} />
       <Route path="/events/booking/:id" element={<BookingEvent />} />
