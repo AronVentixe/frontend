@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 const BookingEvent = () => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const BookingEvent = () => {
     city: '',
     ticketQuantity: 1
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     fetch(`https://aaeventservice-a2bsegegf9gqcta5.swedencentral-01.azurewebsites.net/api/events/${id}`)
@@ -39,12 +40,14 @@ const BookingEvent = () => {
 
       if (!res.ok) {
         console.error("Booking failed");
+        alert("Något gick fel med bokningen, försök igen.");
       } else {
         console.log("Booking successful");
-        navigate('/');
+        setIsSubmitted(true);
       }
     } catch (err) {
       console.error("Error submitting booking", err);
+      alert("Något gick fel med bokningen, försök igen.");
     }
   };
 
@@ -59,41 +62,50 @@ const BookingEvent = () => {
   };
 
   return (
-    <div>
-      <h1>Book Event - {event.title}</h1>
-      <form onSubmit={handleSubmit} noValidate>
-        <div>
-          <label>First Name</label>
-          <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
-        </div>
+    <div className='modal'>
+      {!isSubmitted ? (
+        <>
+          <h1>Book Event - {event.title}</h1>
+          <form className='booking-form' onSubmit={handleSubmit} noValidate>
+            <div className='input-field'>
+              <label>First Name</label>
+              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            </div>
 
-        <div>
-          <label>Last Name</label>
-          <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
-        </div>
+            <div className='input-field'>
+              <label>Last Name</label>
+              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            </div>
 
-        <div>
-          <label>E-mail</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
+            <div className='input-field'>
+              <label>E-mail</label>
+              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            </div>
 
-        <div>
-          <label>Street Name</label>
-          <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} required />
-        </div>
+            <div className='input-field'>
+              <label>Street Name</label>
+              <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} required />
+            </div>
 
-        <div>
-          <label>Postal Code</label>
-          <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
-        </div>
+            <div className='input-field'>
+              <label>Postal Code</label>
+              <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
+            </div>
 
-        <div>
-          <label>City</label>
-          <input type="text" name="city" value={formData.city} onChange={handleChange} required />
-        </div>
+            <div className='input-field'>
+              <label>City</label>
+              <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+            </div>
 
-        <button type="submit">Book Now</button>
-      </form>
+            <button className='booking-button' type="submit">Book Now</button>
+          </form>
+        </>
+      ) : (
+        <div className="confirmation">
+          <p> Din bokning är genomförd!</p>
+          <Link to="/" className="back-home-button">Tillbaka till startsidan</Link>
+        </div>
+      )}
     </div>
   );
 };
