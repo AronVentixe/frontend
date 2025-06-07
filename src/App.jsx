@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Bookings from './assets/pages/Bookings'
+import BookingEvent from './assets/pages/BookingEvent'
 import Events from './assets/pages/Events'
 import EventDetails from './assets/pages/EventDetails'
 
@@ -11,8 +11,8 @@ function App() {
   return (
     <Routes>
       <Route path="/events" element={<Events />} />
-      <Route path="/bookings" element={<Bookings />} />
       <Route path="/event/:id" element={<EventDetails />} />
+      <Route path="/events/booking/:id" element={<BookingEvent />} />
     </Routes>
   )
 }

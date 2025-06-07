@@ -12,7 +12,6 @@ html, body {
 
 .card {
   background-color: 	rgb(255, 255, 255);
-  border: 1px dashed red;
   padding: .7rem;
   border-radius: 16px;
 }
@@ -187,15 +186,29 @@ html, body {
 .content.eventdetails-layout {
   display: grid;
   grid-template-areas: 
-  "event-details seatplan" 
-  "terms seatplan" 
+  "event-details packages"
   "terms packages"
   "partners packages";
   grid-template-columns: 1.3fr 1fr;
+
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 16px;
 }
 
 .event-wrapper.event-details {
   grid-area: event-details;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.eventcard-info.event-details {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.eventcard-image.event-details {
+  border-radius: 16px 16px 0px 0px;
 }
 
 .event-details {
@@ -402,8 +415,8 @@ html, body {
 .partners-wrapper {
   padding: 1rem;
   grid-area: partners;
-  border: 1px dashed red;
   border-radius: 16px;
+  background-color: #ffffff;
 }
 
 .partners-header {

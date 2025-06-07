@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,18 +11,18 @@ const SidePanel = () => {
           <img className='ventixe-icon' src="/images/sidepanel/ventixe.svg" alt="Ticket Icon" />
           <h1 className='ventixe'>Ventixe</h1>
         </div>
-        <div className='sidepanel-horizontal-flex'>
+        <Link className='sidepanel-horizontal-flex'>
           <img src="/images/sidepanel/squares-four.svg" alt="Dashboard Icon" />
           <p>Dashboard</p>
-        </div>
-        <div className='sidepanel-horizontal-flex'>
+        </Link>
+        <Link className='sidepanel-horizontal-flex'>
           <img src="/images/sidepanel/check-square.svg" alt="Bookings Icon" />
           <p>Bookings</p>
-        </div>
-        <div className='sidepanel-horizontal-flex'>
+        </Link>
+        <Link to="/events" className='sidepanel-horizontal-flex'>
           <img src="/images/sidepanel/ticket.svg" alt="Ticket Icon" />
           <p>Events</p>
-        </div>
+        </Link>
       </div>
 
       <button className='sign-out-button'> <img className='sign-out-icon' src="/images/sidepanel/sign-out.svg" alt="" />Sign Out</button>

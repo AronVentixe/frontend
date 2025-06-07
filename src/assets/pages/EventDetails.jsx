@@ -3,21 +3,25 @@ import { useParams } from 'react-router-dom';
 import SidePanel from '../components/SidePanel';
 import Footer from '../components/Footer';
 import PageHeading from '../components/PageHeading';
-import SeatPlan from '../components/SeatPlan';
 import TermsAndConditions from '../components/TermsAndConditions';
 import Packages from '../components/Packages';
 import Partners from '../components/Partners';
+import { Link } from 'react-router-dom';
 
 const EventDetails = () => {
   const { id } = useParams();
   const [event, setEvent] = useState(null);
 
   useEffect(() => {
-    // Exempel: Hämta från en API-endpoint (eller en mocklista)
-    fetch(`https://localhost:7292/api/events/${id}`)
-    .then(res => res.json())
-    .then(data => setEvent(data));
+  console.log("Fetching event:", id);
 
+  fetch(`https://aaeventservice-a2bsegegf9gqcta5.swedencentral-01.azurewebsites.net/api/events/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log("🔍 Response data:", data);
+      setEvent(data.result);
+    })
+    .catch(err => console.error("❌ Error fetching event:", err));
   }, [id]);
 
   if (!event) return <p>Loading...</p>;
@@ -31,27 +35,33 @@ const EventDetails = () => {
 
         <div className='content eventdetails-layout'>
           
-          <SeatPlan></SeatPlan>
 
           <div className='event-wrapper event-details'> 
-              <div className="eventcard-image"></div>
+              <div className="eventcard-image event-details"></div>
 
-            <div className="eventcard-info">
-              <h3 className="eventcard-title">{event.name}</h3>
+            <div className="eventcard-info event-details">
+              <h3 className="eventcard-title">{event.title}</h3>
               <div className='eventcard-horizontal-flex'>
                 <img className='calender-icon' src="/images/eventcarddetails/calendar-dot.svg" alt="" />
-                <p className="eventcard-date">June 5, 2029 — 3:00 PM</p>
+                <p className="eventcard-date">{new Date(event.eventDate).toLocaleString('sv-SE', {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                                hour: '2-digit',
+                                                minute: '2-digit'
+                                              })}</p>
               </div>
               <div className='eventcard-horizontal-flex'>
                 <img className='map-pin-icon' src="/images/eventcard/map-pin.svg" alt="" />
-                <p className="eventcard-location">Rocky Ridge Exhibition Hall, Denver, CO</p>
+                <p className="eventcard-location">{event.location}</p>
               </div>
-              <div className='eventcard-bottom'>
+              <div className='eventcard-bottom display-flex'>
+                <Link to={`/events/booking/${id}`}>Book Event</Link>
                 <span className="eventcard-price">$40</span>
               </div>
 
               <h3>About Event</h3>
-              <p>The Echo Beats Festival brings together a stellar lineup of artists across EDM, pop, and hip-hop genres. Prepare to experience a night of electrifying music, vibrant light shows, and unforgettable performances under the stars. Explore food trucks, art installations, and VIP lounges for an elevated experience.</p>
+              <p>{event.description}</p>
               
             </div>
 
