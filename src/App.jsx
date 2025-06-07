@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import BookingEvent from './assets/pages/BookingEvent'
 import Events from './assets/pages/Events'
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Events />} />
+      <Route path="/" element={<Navigate to="/events" replace />} />
       <Route path="/events" element={<Events />} />
       <Route path="/event/:id" element={<EventDetails />} />
       <Route path="/events/booking/:id" element={<BookingEvent />} />
