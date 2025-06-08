@@ -18,11 +18,16 @@ html, body {
 
 .eventcard {
   background-color: 	rgb(255, 255, 255);
-  width: 23rem;
+  /* width: 23rem; */
+  width: 100%;
   padding: .7rem;
   border-radius: 16px;
   height: 20.5rem;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    
+  }
 }
 
 .eventcard-image {
@@ -37,6 +42,10 @@ html, body {
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+  }
+
+  @media (max-width: 768px) {
+    
   }
 }
 
@@ -90,7 +99,16 @@ html, body {
 
 .event-list {
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 375px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .page-heading {
@@ -104,6 +122,10 @@ html, body {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
 }
 
 .page-heading-text {
@@ -118,6 +140,15 @@ html, body {
   grid-template-areas: "sidepanel pageheading" "sidepanel maincontent" "sidepanel footer";
   padding: .5rem;
   min-height: 100vh;
+
+  @media  (max-width: 768px) {
+    grid-template-columns: 6rem 1fr;
+  }
+
+  @media  (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .sidepanel {
@@ -132,6 +163,14 @@ html, body {
   width: 19rem;
   
   justify-content: space-between;
+
+  @media  (max-width: 768px) {
+    width: 5rem;
+  }
+
+  @media  (max-width: 375px) {
+    width: 100%;
+  }
 }
 
 .sidepanel-group {
@@ -143,6 +182,43 @@ html, body {
   p {
     cursor: pointer;
     color: #37437D;
+
+    
+
+    
+  }
+
+  h1 {
+
+    @media  (max-width: 768px) {
+    display: none; 
+    }
+
+  }
+
+  @media  (max-width: 768px) {
+    align-items: center;
+    padding: 0;
+  }
+
+  @media (max-width: 375px) {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  }
+
+  
+}
+
+.sidepanel-events-text {
+    @media (min-width: 376px) {
+      display: none;
+    }
+}
+
+.sidepanel-menu {
+  @media (min-width: 376px) {
+    display: none;
   }
 }
 
@@ -151,6 +227,12 @@ html, body {
   align-items: center;
   gap: 1rem;
   width: fit-content;
+
+  @media (max-width: 375px) {
+    width: 0;
+    gap: 0;
+    align-items: unset;
+  }
 }
 
 .sign-out-button {
@@ -182,6 +264,11 @@ html, body {
   height: 2rem;
 }
 
+.ventixe-group {
+  padding: 0;
+  margin: 0;
+}
+
 .content {
   grid-area: maincontent;
   height: 100%;
@@ -189,6 +276,10 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 375px) {
+    margin-top: .5rem;
+  }
 }
 
 .sidepanel-button {
@@ -204,6 +295,19 @@ html, body {
 
 .sidepanel-button-content {
   transition: transform 0.3s ease;
+
+  span {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  img {
+
+    @media  (max-width: 375px) {
+    display: none;
+    }
+  }
 }
 
 .sidepanel-button:hover .sidepanel-button-content {
@@ -252,6 +356,11 @@ html, body {
   background-color: #f7f7f7;
   padding: 1rem;
   border-radius: 16px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .event-wrapper.event-details {
@@ -455,8 +564,14 @@ html, body {
 
   .eventcard-price {
     position: absolute;
-    right: 40px;
+    right: 50px;
+
+    @media (max-width: 768px) {
+      position: relative;
+      right: -230px;
+    }
   }
+
 }
 
 .package-card-info {
@@ -473,9 +588,17 @@ html, body {
 
 .packages {
   grid-area: packages;
+}
+
+.packages-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+      display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   }
 }
 
 .partners-wrapper {

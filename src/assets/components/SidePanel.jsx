@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import PageHeading from './PageHeading';
 
 
 
@@ -8,7 +9,7 @@ const SidePanel = () => {
   return (
     <div className="sidepanel">
       <div className='sidepanel-group'>
-        <div className='sidepanel-horizontal-flex'>
+        <div className='sidepanel-horizontal-flex ventixe-group'>
           <img className='ventixe-icon' src="/images/sidepanel/ventixe.svg" alt="Ticket Icon" />
           <h1 className='ventixe'>Ventixe</h1>
         </div>
@@ -29,6 +30,8 @@ const SidePanel = () => {
             <span>Events</span>
           </div>
         </NavLink>
+        {/* <span className='sidepanel-events-text'>Events</span> */}
+        <img className='sidepanel-menu' src="/images/sidepanel/menu.svg" alt="" />
       </div>
 
       {/* <button className='sign-out-button'> <img className='sign-out-icon' src="/images/sidepanel/sign-out.svg" alt="" />Sign Out</button> */}

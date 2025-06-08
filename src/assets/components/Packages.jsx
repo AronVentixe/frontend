@@ -7,7 +7,9 @@ const Packages = () => {
         <h3>Packages</h3>
       </div>
 
-      <div className='package-card'>
+      <div className='packages-content'>
+
+        <div className='package-card'>
         <h4>General Admission Package</h4>
         <span className="eventcard-price">$50</span>
         <div className='display-flex package-card-wrapper'>
@@ -158,6 +160,9 @@ const Packages = () => {
 
         
       </div>
+      </div>
+
+      
 
     </div>
   )
