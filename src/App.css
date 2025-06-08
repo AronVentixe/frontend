@@ -22,7 +22,7 @@ html, body {
   width: 100%;
   padding: .7rem;
   border-radius: 16px;
-  height: 20.5rem;
+  min-height: 20.5rem;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -368,19 +368,25 @@ html, body {
   "event-details packages"
   "terms packages"
   "partners packages";
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: minmax(0, 65%) minmax(0, 35%);
 
   background-color: #f7f7f7;
   padding: 1rem;
   border-radius: 16px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    /* display: flex;
+    flex-direction: column; */
   }
 }
 
 .event-wrapper.event-details {
+  width: 100%;
   grid-area: event-details;
   padding: 0;
   background-color: #ffffff;
@@ -389,6 +395,7 @@ html, body {
 .eventcard-info.event-details {
   padding-left: 1rem;
   padding-right: 1rem;
+  width: 100%;
 }
 
 .eventcard-image.event-details {
@@ -564,7 +571,9 @@ html, body {
   background-color: #f7f7f7;
   padding: 1rem;
   border-radius: 16px;
-
+  max-width: 100%;
+  flex-direction: column;
+  position: relative;
 
   h3 {
     font-size: 16px;
@@ -581,12 +590,12 @@ html, body {
 
   .eventcard-price {
     position: absolute;
-    right: 50px;
+    right: 10px;
 
     @media (max-width: 768px) {
-      position: relative;
-      right: -230px;
+
     }
+
   }
 
 }
@@ -595,7 +604,7 @@ html, body {
   gap: .2rem;
 
   img {
-    width: 1rem;
+    max-width: 1rem;
   }
 }
 
@@ -616,6 +625,11 @@ html, body {
       display: grid;
     grid-template-columns: repeat(2, 1fr);
    }
+
+   @media (max-width: 570px) {
+      display: grid;
+    grid-template-columns: repeat(1, 1fr);
+   }
 }
 
 .partners-wrapper {
@@ -623,6 +637,7 @@ html, body {
   grid-area: partners;
   border-radius: 16px;
   background-color: #ffffff;
+  width: 100%;
 }
 
 .partners-header {
@@ -634,8 +649,11 @@ html, body {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   img {
-    width: 9rem;
+    max-width: 7rem;
+    height: auto;
+    flex: 1 1 auto;
   }
 }
 
