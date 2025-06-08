@@ -15,6 +15,7 @@ const EventDetails = () => {
   useEffect(() => {
   console.log("Fetching event:", id);
   fetch(`https://aaeventservice-a2bsegegf9gqcta5.swedencentral-01.azurewebsites.net/api/events/${id}`)
+  // fetch(`https://localhost:7292/api/events/${id}`)
     .then(res => res.json())
     .then(data => {
       console.log("🔍 Response data:", data);
