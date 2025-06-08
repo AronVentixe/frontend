@@ -7,6 +7,7 @@ const BookingEvent = () => {
   const [event, setEvent] = useState(null);
   const [formData, setFormData] = useState({
     eventId: id,
+    packageId: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -96,6 +97,18 @@ const BookingEvent = () => {
               <label>City</label>
               <input type="text" name="city" value={formData.city} onChange={handleChange} required />
             </div>
+
+            <div className='input-field'>
+              <label>Select Package</label>
+              <select name="packageId" value={formData.packageId || ''} onChange={handleChange} required>
+                <option value="">-- Select a package --</option>
+                {event.packages?.map(pkg => (
+                  <option key={pkg.id} value={pkg.id}>
+                    {pkg.title} (${pkg.price})
+                  </option>
+                ))}
+              </select>
+            </div>  
 
             <button className='booking-button' type="submit">Book Now</button>
           </form>
