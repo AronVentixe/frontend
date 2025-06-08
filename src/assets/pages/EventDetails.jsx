@@ -14,7 +14,6 @@ const EventDetails = () => {
 
   useEffect(() => {
   console.log("Fetching event:", id);
-
   fetch(`https://aaeventservice-a2bsegegf9gqcta5.swedencentral-01.azurewebsites.net/api/events/${id}`)
     .then(res => res.json())
     .then(data => {
@@ -57,7 +56,7 @@ const EventDetails = () => {
               </div>
               <div className='eventcard-bottom display-flex'>
                 <Link className='book-button' to={`/events/booking/${id}`}><span className='book-button-text'>Book Event</span></Link>
-                <span className="eventcard-price">$40</span>
+                <span className="eventcard-price">From ${event.startingPrice}</span>
               </div>
 
               <h3>About Event</h3>

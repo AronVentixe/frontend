@@ -8,7 +8,7 @@ const EventCard = ({ event }) => {
   const handleClick = () => {
     navigate(`/event/${event.id}`);
   };
-
+  console.log("🎯", event.startingPrice);
   return <div className='eventcard' onClick={handleClick}>
     
     <div className="eventcard-image"><img src="/images/eventcard/placeholder-image.jpg" alt="placeholder image" /></div>
@@ -27,11 +27,11 @@ const EventCard = ({ event }) => {
         <p className="eventcard-location">{event.location}</p>
       </div>
       <div className='eventcard-bottom'>
-      <span className="eventcard-price">$40</span>
+      <span className="eventcard-price">From ${event.startingPrice}</span>
       </div>
     </div>
 
-
+                                            
   </div>;
 };
 
